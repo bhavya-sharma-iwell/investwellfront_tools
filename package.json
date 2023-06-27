@@ -11,14 +11,21 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.3",
     "axios": "^1.4.0",
-    "css-loader": "^6.7.4",
+    "css-loader": "^6.8.1",
     "file-loader": "^6.2.0",
+    "moment": "^2.29.4",
     "raw-loader": "^4.0.2",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
-    "style-loader": "^3.3.3"
+    "recharts": "^2.6.2",
+    "style-loader": "^3.3.3",
+    "url-loader": "^4.1.1"
   },
   "devDependencies": {
     "@babel/core": "7.21.8",

@@ -1,0 +1,327 @@
+#portfolioCorrelation .logo {
+  height: 8%;
+  width: 12%;
+  border: 1px solid #ede8ea;
+  display: inline-block;
+  position: absolute;
+  background-color: white; }
+#portfolioCorrelation .navHeader {
+  display: inline-block;
+  height: 8%;
+  width: 88%;
+  border: 1px solid #ede8ea;
+  position: absolute;
+  margin: auto 0 0 12%;
+  background-color: #fff; }
+#portfolioCorrelation .sideNav {
+  height: 94%; }
+#portfolioCorrelation .sideNav,
+#portfolioCorrelation .sideNavWithMatrix {
+  display: inline-block;
+  width: 12%;
+  margin: 3% 0 0 0;
+  border: 1px solid #ede8ea;
+  background-color: #526fe4;
+  position: absolute; }
+#portfolioCorrelation .sideNavWithMatrix {
+  height: 200%; }
+#portfolioCorrelation .rightMain {
+  height: 100%; }
+#portfolioCorrelation .rightMainWithMatrix {
+  height: auto; }
+#portfolioCorrelation .rightMain,
+#portfolioCorrelation .rightMainWithMatrix {
+  display: inline-block;
+  width: 100%;
+  border: 1px solid #ede8ea;
+  background-color: #f0f4fa;
+  position: absolute; }
+  #portfolioCorrelation .rightMain .contentArea,
+  #portfolioCorrelation .rightMainWithMatrix .contentArea {
+    height: auto;
+    width: 95%;
+    background-color: #ffffff;
+    margin: 2% auto;
+    padding: 20px 5px 0 20px; }
+    #portfolioCorrelation .rightMain .contentArea .selectionArea,
+    #portfolioCorrelation .rightMainWithMatrix .contentArea .selectionArea {
+      display: inline-block;
+      margin: 0 30px 10px 5px; }
+      #portfolioCorrelation .rightMain .contentArea .selectionArea .labels,
+      #portfolioCorrelation .rightMainWithMatrix .contentArea .selectionArea .labels {
+        display: block;
+        margin: 0 0 5px;
+        font-weight: 600; }
+      #portfolioCorrelation .rightMain .contentArea .selectionArea .goButton,
+      #portfolioCorrelation .rightMainWithMatrix .contentArea .selectionArea .goButton {
+        border: 1px solid #585858;
+        width: 80px;
+        height: 38px;
+        border-radius: 5px;
+        background-color: #5275E9;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: large;
+        cursor: pointer; }
+    #portfolioCorrelation .rightMain .contentArea .schemeList,
+    #portfolioCorrelation .rightMainWithMatrix .contentArea .schemeList {
+      display: block; }
+      #portfolioCorrelation .rightMain .contentArea .schemeList .displayList,
+      #portfolioCorrelation .rightMainWithMatrix .contentArea .schemeList .displayList {
+        display: inline-block;
+        position: relative; }
+        #portfolioCorrelation .rightMain .contentArea .schemeList .displayList .listTitle,
+        #portfolioCorrelation .rightMainWithMatrix .contentArea .schemeList .displayList .listTitle {
+          color: #2e2b3a;
+          margin: 32px 0 0 5px;
+          height: auto;
+          position: absolute;
+          width: 10%; }
+        #portfolioCorrelation .rightMain .contentArea .schemeList .displayList .listBox,
+        #portfolioCorrelation .rightMainWithMatrix .contentArea .schemeList .displayList .listBox {
+          display: inline-block;
+          width: auto;
+          margin: 0 0 0 25px;
+          padding: 0px 0 8px 50px;
+          font-weight: 200; }
+          #portfolioCorrelation .rightMain .contentArea .schemeList .displayList .listBox .lists,
+          #portfolioCorrelation .rightMainWithMatrix .contentArea .schemeList .displayList .listBox .lists {
+            display: inline-block;
+            margin: 0 0 10px 0; }
+            #portfolioCorrelation .rightMain .contentArea .schemeList .displayList .listBox .lists .date,
+            #portfolioCorrelation .rightMainWithMatrix .contentArea .schemeList .displayList .listBox .lists .date {
+              color: #35c0ae;
+              text-align: center;
+              font-style: italic;
+              width: auto;
+              margin: 5px 0 4px 10px;
+              display: block; }
+            #portfolioCorrelation .rightMain .contentArea .schemeList .displayList .listBox .lists .list,
+            #portfolioCorrelation .rightMainWithMatrix .contentArea .schemeList .displayList .listBox .lists .list {
+              color: #585858;
+              border: 1px solid #585858;
+              width: auto;
+              list-style-type: none;
+              display: inline-block;
+              border-radius: 15px;
+              margin: 0 0 0 10px;
+              height: auto;
+              padding: 5px 3px 4px 7px; }
+              #portfolioCorrelation .rightMain .contentArea .schemeList .displayList .listBox .lists .list .deleteBtn,
+              #portfolioCorrelation .rightMainWithMatrix .contentArea .schemeList .displayList .listBox .lists .list .deleteBtn {
+                border-left: 1px solid #585858;
+                float: right;
+                width: 20px;
+                text-align: center;
+                height: 20px;
+                margin: -2px 0 0 8px;
+                padding: 2px 0 0 0;
+                cursor: pointer; }
+        #portfolioCorrelation .rightMain .contentArea .schemeList .displayList .clearButton,
+        #portfolioCorrelation .rightMainWithMatrix .contentArea .schemeList .displayList .clearButton {
+          border: 1px solid #585858;
+          border-radius: 15px;
+          width: auto;
+          color: #ffffff;
+          background-color: #6e738b;
+          height: 25px;
+          display: inline-block;
+          margin: 0 0 0 10px;
+          position: inherit;
+          text-align: center;
+          padding: 6px 5px 25px; }
+          #portfolioCorrelation .rightMain .contentArea .schemeList .displayList .clearButton .clearText,
+          #portfolioCorrelation .rightMainWithMatrix .contentArea .schemeList .displayList .clearButton .clearText {
+            padding: 4px; }
+          #portfolioCorrelation .rightMain .contentArea .schemeList .displayList .clearButton .deleteBtn,
+          #portfolioCorrelation .rightMainWithMatrix .contentArea .schemeList .displayList .clearButton .deleteBtn {
+            float: right;
+            border-left: 1px solid #d1e0eb;
+            width: auto;
+            height: auto;
+            padding: 2px 2px 5px 5px;
+            margin: -4px 0 0 5px;
+            cursor: pointer; }
+    #portfolioCorrelation .rightMain .contentArea .timePeriodBox,
+    #portfolioCorrelation .rightMainWithMatrix .contentArea .timePeriodBox {
+      display: block;
+      margin: 15px 6px 0; }
+      #portfolioCorrelation .rightMain .contentArea .timePeriodBox .labels,
+      #portfolioCorrelation .rightMainWithMatrix .contentArea .timePeriodBox .labels {
+        font-weight: 600; }
+      #portfolioCorrelation .rightMain .contentArea .timePeriodBox .dropdownContainer,
+      #portfolioCorrelation .rightMainWithMatrix .contentArea .timePeriodBox .dropdownContainer {
+        width: 130px;
+        margin: 6px 0 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: first baseline; }
+      #portfolioCorrelation .rightMain .contentArea .timePeriodBox .dropdownMenu,
+      #portfolioCorrelation .rightMainWithMatrix .contentArea .timePeriodBox .dropdownMenu {
+        width: 130px; }
+    #portfolioCorrelation .rightMain .contentArea .applyButton,
+    #portfolioCorrelation .rightMainWithMatrix .contentArea .applyButton {
+      border: 1px solid #585858;
+      width: 142px;
+      height: 40px;
+      margin: 2% 45%;
+      background-color: #5275E9;
+      color: #fff;
+      border-radius: 3px;
+      font-size: large;
+      cursor: pointer; }
+    #portfolioCorrelation .rightMain .contentArea .applyButton:hover,
+    #portfolioCorrelation .rightMainWithMatrix .contentArea .applyButton:hover {
+      background-color: #929beb; }
+  #portfolioCorrelation .rightMain .matrixArea,
+  #portfolioCorrelation .rightMainWithMatrix .matrixArea {
+    height: auto;
+    width: 95%;
+    background-color: #ffffff;
+    margin: 2% auto;
+    padding: 20px 5px 25px 20px; }
+    #portfolioCorrelation .rightMain .matrixArea .correlationMatrix,
+    #portfolioCorrelation .rightMainWithMatrix .matrixArea .correlationMatrix {
+      width: 86%;
+      margin: auto;
+      padding: 20px; }
+      #portfolioCorrelation .rightMain .matrixArea .correlationMatrix .heatMap,
+      #portfolioCorrelation .rightMainWithMatrix .matrixArea .correlationMatrix .heatMap {
+        text-align: center;
+        width: inherit;
+        margin: auto; }
+        #portfolioCorrelation .rightMain .matrixArea .correlationMatrix .heatMap .matrixTable,
+        #portfolioCorrelation .rightMainWithMatrix .matrixArea .correlationMatrix .heatMap .matrixTable {
+          margin: auto;
+          width: auto; }
+          #portfolioCorrelation .rightMain .matrixArea .correlationMatrix .heatMap .matrixTable .xLabel,
+          #portfolioCorrelation .rightMain .matrixArea .correlationMatrix .heatMap .matrixTable .yLabel,
+          #portfolioCorrelation .rightMainWithMatrix .matrixArea .correlationMatrix .heatMap .matrixTable .xLabel,
+          #portfolioCorrelation .rightMainWithMatrix .matrixArea .correlationMatrix .heatMap .matrixTable .yLabel {
+            font-weight: 550; }
+          #portfolioCorrelation .rightMain .matrixArea .correlationMatrix .heatMap .matrixTable .matrixCells,
+          #portfolioCorrelation .rightMainWithMatrix .matrixArea .correlationMatrix .heatMap .matrixTable .matrixCells {
+            width: 90px;
+            height: 50px;
+            font-size: 20px; }
+    #portfolioCorrelation .rightMain .matrixArea .descriptionTableDiv,
+    #portfolioCorrelation .rightMainWithMatrix .matrixArea .descriptionTableDiv {
+      width: 80%;
+      margin: auto;
+      align-items: center;
+      padding: 20px; }
+      #portfolioCorrelation .rightMain .matrixArea .descriptionTableDiv .descriptionTable,
+      #portfolioCorrelation .rightMainWithMatrix .matrixArea .descriptionTableDiv .descriptionTable {
+        border-collapse: collapse;
+        width: auto;
+        margin: auto; }
+        #portfolioCorrelation .rightMain .matrixArea .descriptionTableDiv .descriptionTable .lowerTableRow,
+        #portfolioCorrelation .rightMainWithMatrix .matrixArea .descriptionTableDiv .descriptionTable .lowerTableRow {
+          border: 1px solid #f4f4f4;
+          box-shadow: 0px 1px 1px 1px #f4f4f4;
+          padding: 5px 1px; }
+          #portfolioCorrelation .rightMain .matrixArea .descriptionTableDiv .descriptionTable .lowerTableRow .colorGreen,
+          #portfolioCorrelation .rightMainWithMatrix .matrixArea .descriptionTableDiv .descriptionTable .lowerTableRow .colorGreen {
+            background-color: #8aec31; }
+          #portfolioCorrelation .rightMain .matrixArea .descriptionTableDiv .descriptionTable .lowerTableRow .colorSkyBlue,
+          #portfolioCorrelation .rightMainWithMatrix .matrixArea .descriptionTableDiv .descriptionTable .lowerTableRow .colorSkyBlue {
+            background-color: #87f3c1; }
+          #portfolioCorrelation .rightMain .matrixArea .descriptionTableDiv .descriptionTable .lowerTableRow .colorOrange,
+          #portfolioCorrelation .rightMainWithMatrix .matrixArea .descriptionTableDiv .descriptionTable .lowerTableRow .colorOrange {
+            background-color: #e87710; }
+          #portfolioCorrelation .rightMain .matrixArea .descriptionTableDiv .descriptionTable .lowerTableRow .colorRed,
+          #portfolioCorrelation .rightMainWithMatrix .matrixArea .descriptionTableDiv .descriptionTable .lowerTableRow .colorRed {
+            background-color: #e4450b; }
+        #portfolioCorrelation .rightMain .matrixArea .descriptionTableDiv .descriptionTable .lowerTableRow td,
+        #portfolioCorrelation .rightMainWithMatrix .matrixArea .descriptionTableDiv .descriptionTable .lowerTableRow td {
+          padding: 5px 25px; }
+#portfolioCorrelation .errorMsg {
+  position: absolute;
+  color: red; }
+#portfolioCorrelation .dropdownContainer {
+  text-align: left;
+  border: 1px solid #ccc;
+  position: relative;
+  border-radius: 5px;
+  width: 400px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: large;
+  font-weight: 500; }
+  #portfolioCorrelation .dropdownContainer .close {
+    position: absolute;
+    right: 8px;
+    top: 14px;
+    width: 32px;
+    height: 32px;
+    opacity: 0; }
+  #portfolioCorrelation .dropdownContainer .close:hover {
+    opacity: 1;
+    cursor: pointer; }
+  #portfolioCorrelation .dropdownContainer .close:before,
+  #portfolioCorrelation .dropdownContainer .close:after {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 15px;
+    width: 2px;
+    background-color: #333; }
+  #portfolioCorrelation .dropdownContainer .close:before {
+    transform: rotate(45deg); }
+  #portfolioCorrelation .dropdownContainer .close:after {
+    transform: rotate(-45deg); }
+#portfolioCorrelation .dropdownContainer:focus {
+  border: none; }
+#portfolioCorrelation .dropdownMenu {
+  position: absolute;
+  transform: translateY(4px);
+  width: 400px;
+  overflow: auto;
+  max-height: 150px;
+  background-color: #fff;
+  z-index: 9999;
+  border: 1px solid grey;
+  border-top: none;
+  margin: -3px 0px; }
+  #portfolioCorrelation .dropdownMenu .dropdownItem {
+    padding: 8px;
+    cursor: pointer;
+    font-size: large; }
+  #portfolioCorrelation .dropdownMenu .dropdownItem:hover {
+    background-color: #4959e8;
+    color: #fff; }
+
+@media (min-width: 1000px) {
+  #portfolioCorrelation .listTitle {
+    margin: 32px 0 0 5px; }
+  #portfolioCorrelation .listBox {
+    padding: 0px 0 8px 60px; } }
+@media (max-width: 768px) {
+  #portfolioCorrelation .sideNav,
+  #portfolioCorrelation .sideNavWithMatrix,
+  #portfolioCorrelation .logo {
+    display: none; }
+  #portfolioCorrelation .rightMain,
+  #portfolioCorrelation .rightMainWithMatrix,
+  #portfolioCorrelation .navHeader {
+    width: 110vh;
+    position: relative;
+    margin: 0; }
+  #portfolioCorrelation .listBox {
+    margin: 0 0 0 80px; }
+  #portfolioCorrelation .lowerTableRow td {
+    padding: 2px; } }
+@media (max-height: 500px) {
+  #portfolioCorrelation .logo,
+  #portfolioCorrelation .navHeader {
+    height: 5%; }
+  #portfolioCorrelation .rightMain,
+  #portfolioCorrelation .rightMainWithMatrix {
+    height: 100vh; }
+  #portfolioCorrelation .sideNav,
+  #portfolioCorrelation .sideNavWithMatrix {
+    height: 100vh; } }
+
+/*# sourceMappingURL=portfolioCorrelation.css.map */
