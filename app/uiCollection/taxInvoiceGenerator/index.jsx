@@ -221,6 +221,8 @@ export default function Index() {
     }
   
     return (
+        <>
+        <title>Tax Invoice Generator</title>
         <div className="screenContainer">
             <h2 className="toolTitle">Advisory Invoice Generator</h2>
             <div className="mainContainer">
@@ -383,5 +385,6 @@ export default function Index() {
                 </div>
             </div>
         </div>
+        </>
     )
   }   

@@ -5,52 +5,49 @@ const Dropdown = (props) => {
   const [value, setValue] = useState("");
   const [menu, setMenu] = useState(false);
   function handleChangeSchemeOption(event) {
-    const arr = [];
     if (
       event.target.value == "" ||
       (props.selected && props.selected.length < 0)
     ) {
       setCurrentMenu(props.option);
     } else {
-      for (let i = 0; i < props.option.length; i++) {
-        if (
-          props.option[i].name
-            .toLowerCase()
-            .startsWith(event.target.value.toLowerCase())
-        ) {
-          arr.push(props.option[i]);
-        }
-      }
-      setCurrentMenu(arr);
+      const schemeFilteredData = props.option.filter((item)=>{
+       return item.name.toLowerCase().includes(event.target.value.toLowerCase())
+      })
+      setCurrentMenu(schemeFilteredData);
     }
   }
 
   return (
     <>
-      {props.isSearchable && (
-        <>
-          <input
-            type="search"
-            className="dropdownContainer"
+      {props.isSearchable ? (
+          <input type="search" className="dropdownContainer"
             onClick={() => {
               props.setShowMenu(props.label);
               setCurrentMenu(props.option);
-              setMenu(true);
               setMenu(!menu)
             }}
-            
-            onChange={(event) => {
+            onChange={event => {
               props.setShowMenu(props.label);
               setCurrentMenu(props.option);
               handleChangeSchemeOption(event);
               setValue(event.target.value)
-              setMenu(true);
               props.label == "scheme" && props.setGoClicked(false)
             }}
             placeholder="Search"
             value={(props.label == "scheme" && props.goClicked)?'':value}
-          ></input>
-        </>
+          />
+      )
+      :(<div
+            className="dropdownContainer"
+            onClick={() => {props &&
+              props.setShowMenu(props.label);
+              setCurrentMenu(props.option);
+              setMenu(!menu)
+            }}
+            >
+            {(props.selected)?props.selected.name:'Select'}
+            </div>
       )}
       {menu && props.showMenu == props.label && (
         <div className="dropdownMenu">
@@ -71,6 +68,7 @@ const Dropdown = (props) => {
                 }`}
               >
                 {id.name}
+
               </div>
             ))}
         </div>

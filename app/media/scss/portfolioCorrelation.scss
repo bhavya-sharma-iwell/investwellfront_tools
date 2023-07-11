@@ -9,7 +9,7 @@ $button-color: #5275E9;
     border: $divBorders;
     display: inline-block;
     position: absolute;
-    background-color: white;
+    background-color: #fff;
   }
 
   .navHeader {
@@ -52,7 +52,6 @@ $button-color: #5275E9;
   .rightMainWithMatrix {
     display: inline-block;
     width: 100%;
-    // margin: 0;
     border: $divBorders;
     background-color: #f0f4fa;
     position: absolute;
@@ -62,11 +61,11 @@ $button-color: #5275E9;
       width: 95%;
       background-color: #ffffff;
       margin: 2% auto;
-      padding: 20px 5px 0 20px;
+      padding: 20px 5px 0 60px;
 
       .selectionArea {
         display: inline-block;
-        margin: 0 30px 10px 5px;
+        margin: 0 30px 0px 5px;
 
         .labels {
           display: block;
@@ -89,6 +88,7 @@ $button-color: #5275E9;
 
       .schemeList {
         display: block;
+        margin-top: 20px;
 
         .displayList {
           display: inline-block;
@@ -100,6 +100,7 @@ $button-color: #5275E9;
             height: auto;
             position: absolute;
             width: 10%;
+            font-weight: 700;
           }
 
           .listBox {
@@ -186,15 +187,17 @@ $button-color: #5275E9;
         }
 
         .dropdownContainer {
-          width: 130px;
+          width: 250px;
           margin: 6px 0 0 0;
+     
           display: flex;
           align-items: center;
           justify-content: first baseline;
+          background-color: #fff;
         }
 
         .dropdownMenu {
-          width: 130px;
+          width: 250px;
         }
       }
 
@@ -293,7 +296,11 @@ $button-color: #5275E9;
   .errorMsg{
     position: absolute;
     color: red;
-}
+    font-size:15px;
+  }
+  .schemeError{
+    padding: 0 30% 0 38%;
+  }
   .dropdownContainer {
     text-align: left;
     border: 1px solid #ccc;
@@ -306,6 +313,7 @@ $button-color: #5275E9;
     justify-content: space-between;
     font-size: large;
     font-weight: 500;
+    background-color: #fff;
     .close {
       position: absolute;
       right: 8px;
@@ -349,7 +357,6 @@ $button-color: #5275E9;
     border: 1px solid grey;
     border-top: none;
     margin: -3px 0px;
-    // border-radius: 10px 5px 5px 10px;
 
     .dropdownItem {
       padding: 8px;

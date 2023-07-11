@@ -4,7 +4,7 @@
   border: 1px solid #ede8ea;
   display: inline-block;
   position: absolute;
-  background-color: white; }
+  background-color: #fff; }
 #portfolioCorrelation .navHeader {
   display: inline-block;
   height: 8%;
@@ -42,11 +42,11 @@
     width: 95%;
     background-color: #ffffff;
     margin: 2% auto;
-    padding: 20px 5px 0 20px; }
+    padding: 20px 5px 0 60px; }
     #portfolioCorrelation .rightMain .contentArea .selectionArea,
     #portfolioCorrelation .rightMainWithMatrix .contentArea .selectionArea {
       display: inline-block;
-      margin: 0 30px 10px 5px; }
+      margin: 0 30px 0px 5px; }
       #portfolioCorrelation .rightMain .contentArea .selectionArea .labels,
       #portfolioCorrelation .rightMainWithMatrix .contentArea .selectionArea .labels {
         display: block;
@@ -65,7 +65,8 @@
         cursor: pointer; }
     #portfolioCorrelation .rightMain .contentArea .schemeList,
     #portfolioCorrelation .rightMainWithMatrix .contentArea .schemeList {
-      display: block; }
+      display: block;
+      margin-top: 20px; }
       #portfolioCorrelation .rightMain .contentArea .schemeList .displayList,
       #portfolioCorrelation .rightMainWithMatrix .contentArea .schemeList .displayList {
         display: inline-block;
@@ -76,7 +77,8 @@
           margin: 32px 0 0 5px;
           height: auto;
           position: absolute;
-          width: 10%; }
+          width: 10%;
+          font-weight: 700; }
         #portfolioCorrelation .rightMain .contentArea .schemeList .displayList .listBox,
         #portfolioCorrelation .rightMainWithMatrix .contentArea .schemeList .displayList .listBox {
           display: inline-block;
@@ -151,14 +153,15 @@
         font-weight: 600; }
       #portfolioCorrelation .rightMain .contentArea .timePeriodBox .dropdownContainer,
       #portfolioCorrelation .rightMainWithMatrix .contentArea .timePeriodBox .dropdownContainer {
-        width: 130px;
+        width: 250px;
         margin: 6px 0 0 0;
         display: flex;
         align-items: center;
-        justify-content: first baseline; }
+        justify-content: first baseline;
+        background-color: #fff; }
       #portfolioCorrelation .rightMain .contentArea .timePeriodBox .dropdownMenu,
       #portfolioCorrelation .rightMainWithMatrix .contentArea .timePeriodBox .dropdownMenu {
-        width: 130px; }
+        width: 250px; }
     #portfolioCorrelation .rightMain .contentArea .applyButton,
     #portfolioCorrelation .rightMainWithMatrix .contentArea .applyButton {
       border: 1px solid #585858;
@@ -237,7 +240,10 @@
           padding: 5px 25px; }
 #portfolioCorrelation .errorMsg {
   position: absolute;
-  color: red; }
+  color: red;
+  font-size: 15px; }
+#portfolioCorrelation .schemeError {
+  padding: 0 30% 0 38%; }
 #portfolioCorrelation .dropdownContainer {
   text-align: left;
   border: 1px solid #ccc;
@@ -249,7 +255,8 @@
   align-items: center;
   justify-content: space-between;
   font-size: large;
-  font-weight: 500; }
+  font-weight: 500;
+  background-color: #fff; }
   #portfolioCorrelation .dropdownContainer .close {
     position: absolute;
     right: 8px;

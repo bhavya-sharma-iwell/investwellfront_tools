@@ -4,6 +4,7 @@ import "../media/css/main.css";
 const Main = () => {
   return (
     <>
+    <title>Tools</title>
       <nav>
         <ul className="buttoncontainer">
           <Link

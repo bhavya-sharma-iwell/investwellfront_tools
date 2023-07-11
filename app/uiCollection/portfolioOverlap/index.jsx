@@ -1,21 +1,30 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState, Fragment, useEffect } from 'react'
 import axios from 'axios'
 import FilterArea from './filterArea.jsx'
 import StocksTable from './stocksTable.jsx'
 import PortfolioOverlap from './portfolioOverlap.jsx'
 import '../../media/css/portfolioOverlap.css';
+import { defaultSchemes } from '../../constants/portfolioOverlap.js'
 
 export default function Index() {
   const [loading, setLoading] = useState(false)
   const [holdingsDetails, setHoldingsDetails] = useState()
-  const [dropdownA, setDropdownA] = useState(true)
-  const [dropdownB, setDropdownB] = useState(true)
-  const [schemeA, setSchemeA] = useState({})
-  const [schemeB, setSchemeB] = useState({})
+  const [dropdownA, setDropdownA] = useState(false)
+  const [dropdownB, setDropdownB] = useState(false)
+  const [schemeA, setSchemeA] = useState(defaultSchemes[0])
+  const [schemeB, setSchemeB] = useState(defaultSchemes[1])
   const [mutualFunds, setMutualFunds] = useState('')
   const [sortTable, setSortTable] = useState({ name: "", direction: true })
   const [debounce, setDebounce] = useState()
 
+  useEffect(() => {
+    axios.get(`api/portfolioOverlap/getPortfolioOverlap`, { params: { schid1: schemeA.id, schid2: schemeB.id } })
+    .then(res => {
+      if (res.data && res.data.status == 0) {
+        setHoldingsDetails({ holding: res.data.result.holding, vennDiagram: res.data.result.vennDiagram, overlapValue: res.data.result.overlapValue, schemeAName: schemeA.scheme, schemeBName: schemeB.scheme })
+      }
+    })
+  }, []);
   const handleInputChange = (event, label) => {
     let debounceTimer = debounce
     clearTimeout(debounceTimer)
@@ -73,7 +82,7 @@ export default function Index() {
     <Fragment>
       <title>Portfolio Overlap</title>
       <div className='outerContainer '>
-        <h3 className='info'> Diversity the holding across different categories of fund investing in different asset classes after comparing the portfolio of various fund houses
+        <h3 className='info'> Diversify the holding across different categories of fund investing in different asset classes after comparing the portfolio of various fund houses
           to avoid portfolio overlap</h3>
         <div className='filterArea'>
           <FilterArea

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import RightMain from './rightMain.jsx'
-import { categoryOption, timePeriodOption } from '../../constants/portfolioCorrelation.js'
+import { categoryOption, timePeriodOption, defaultSchemes } from '../../constants/portfolioCorrelation.js'
 import axios from 'axios'
 import '../../media/css/portfolioCorrelation.css'
 
@@ -8,21 +8,21 @@ import '../../media/css/portfolioCorrelation.css'
 export default function Index() {
 
   const [schemeOption, setSchemeOption] = useState()
-  const [category, setCategory] = useState(null)
-  const [timePeriod, setTimePeriod] = useState(null)
+  const [category, setCategory] = useState(categoryOption[0])
+  const [timePeriod, setTimePeriod] = useState(timePeriodOption[1])
   const [scheme, setScheme] = useState([])
-  const [count, setCount] = useState(1)
-  const [schemeArr, setSchemeArray] = useState([])
+  const [count, setCount] = useState(defaultSchemes.length + 1)
+  const [schemeArr, setSchemeArray] = useState(defaultSchemes)
   const [showMatrix, setShowMatrix] = useState(false)
   const [navData, setNavData] = useState()
   const [showMenu, setShowMenu] = useState('')
   const [error, setError] = useState({})
-  const [goClicked, setGoClicked] = useState(false)
+  const [goClicked, setGoClicked] = useState(true)
 
   const clearData = (field, data) => {
     switch (field) {
       case 'clearOne':
-        setCount(1)
+        setCount(10)
         const index = schemeArr.findIndex((item) => item.schid === data.schid)
         schemeArr.splice(index, 1)
         for (let i = 0; i < schemeArr.length; i++) {
@@ -30,6 +30,8 @@ export default function Index() {
           setCount(count - 1)
           setShowMatrix(false)
         }
+        if(schemeArr.length == 0)
+        setCount(1)
         break
       case 'clearAll':
         setCount(1)
@@ -39,9 +41,15 @@ export default function Index() {
       default:
     }
   }
+  useEffect(() => {
+      const timeoutId = setTimeout(() => {
+        setError({});
+      }, 5000);
+      return () => clearTimeout(timeoutId);
+  }, [error]);
   const drillDownData = (obj) => {
     if (obj == '') {
-      setError({'noScheme':'Please select scheme!'})
+      setInterval(setError({'noScheme':'Please select scheme!'}),1000)
     }
     else if (schemeArr.some(obj => obj.schid == scheme.schid)) {
       setError({'schemeAlready':'Scheme already exist'})
@@ -72,39 +80,34 @@ export default function Index() {
               setSchemeArray(updatedSchemeArray)
               setCount(count + 1)
               setShowMatrix(false)
-              // setScheme([])
             }
           }
         })
         .catch(error => {
-          console.log("error", error)
+          setShowMatrix(false)
         })
     }
   }
   const matrixData = () => {
-    
-    if (timePeriod == null || (timePeriod && timePeriod.value < 3)) {
+    if (!timePeriod) {
       setError({'timePeriod':'Please select time period!'})
     }
-    else if (schemeArr && schemeArr.length <= 1) {
-      setError({'2Schemes':'Please select atleast two schemes'})
+    else if (schemeArr && schemeArr.length  < 2) {
+      setError({'twoSchemes':'Please select atleast two schemes'})
     }
     else if (schemeArr.length > 15) {
-      setError({'15schemes':'Only 15 schemes can be selected!!'})
+      setError({'fifteenSchemes':'Only 15 schemes can be selected!!'})
     }
     else{
     setError({})
-    let data = []
-    schemeArr.map((object) => (
-      data.push(object.schid)
-    ))
-    axios.get("api/portfolioCorrelation/getNavs", {
+    let data = schemeArr.map(obj => obj.schid)
+    axios.get("api/portfolioCorrelation/createCorrelationMatrix", {
       params: {
         schid: { 'arr': data },
         timePeriod: timePeriod && timePeriod.value
       }
     })
-      .then((response) => {
+      .then(response => {
         if (response.data.status == -1) {
           setError(response.data.result)
 
@@ -116,33 +119,55 @@ export default function Index() {
         }
       })
       .catch(error => {
-        console.log("error", error)
+        setShowMatrix(false)
       })
     }
   }
+
   useEffect(() => {
-    if (category != null) {
+    let data = schemeArr.map(obj => obj.schid)
+    axios.get("api/portfolioCorrelation/createCorrelationMatrix", {
+      params: {
+        schid: { 'arr': data },
+        timePeriod: timePeriod && timePeriod.value
+      }
+    })
+      .then(response => {
+        if (response.data.status == -1) {
+          setError(response.data.result)
+
+        }
+        else {
+          setShowMatrix(true)
+          setNavData(response.data.result)
+        }
+      })
+      .catch(error => {
+        setShowMatrix(false)
+      })
+  },[])
+  useEffect(() => {
+    if (category) {
       axios.get("api/portfolioCorrelation/getSchemes", {
         params: {
           category: category && category.value
         }
       })
-        .then((response) => {
+        .then(response => {
           response.data && response.data.status == 0 &&
             setSchemeOption(response.data.result)
 
         })
         .catch(error => {
-          console.log("error", error)
+          setShowMatrix(false)
         })
     }
   }, [category])
 
   return (
+  <>
+    <title>Portfolio Correlation</title>
     <div id = "portfolioCorrelation">
-      {/* <div className='navHeader'></div> */}
-      {/* <div className='logo'></div> */}
-      {/* <div className={showMatrix ? 'sideNavWithMatrix' : 'sideNav'}></div> */}
       <RightMain
         category={category}
         setSchemeOption={setSchemeOption}
@@ -170,6 +195,6 @@ export default function Index() {
         setGoClicked={setGoClicked}
       />
     </div>
-
+    </>
   )
 }
